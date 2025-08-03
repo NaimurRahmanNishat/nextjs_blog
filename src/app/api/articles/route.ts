@@ -6,7 +6,7 @@ import { FilterQuery } from "mongoose";
 
 export async function GET(request: NextRequest) {
     try {
-            await connectDB();
+    await connectDB();
     const {searchParams} = request.nextUrl;
     const query = searchParams.get("q");
     const category = searchParams.get("category");
