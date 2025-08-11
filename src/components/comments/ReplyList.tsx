@@ -1,14 +1,17 @@
 import { Reply } from '@/types/comments'
+import Image from 'next/image'
 import React from 'react'
 
-const ReplyList = ({replies}: {replies: Reply[]}) => {
+const ReplyList = ({ replies = [] }: { replies?: Reply[] }) => {
   return (
     <div className="ml-12 mt-4 border-l pl-4 space-y-4">
       {replies.map((reply, idx) => (
         <div key={idx} className="flex space-x-3">
-          <img
+          <Image
             src="https://placehold.co/40x40/e2e8f0/4a5568?text=User"
             alt={reply.author}
+            width={40}
+            height={40}
             className="w-10 h-10 rounded-full"
           />
           <div>
@@ -23,5 +26,6 @@ const ReplyList = ({replies}: {replies: Reply[]}) => {
     </div>
   )
 }
+
 
 export default ReplyList
