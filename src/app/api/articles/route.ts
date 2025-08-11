@@ -68,11 +68,9 @@ export async function POST(request: NextRequest) {
     await connectDB();
     const body = await request.json();
     const newArticle = new ArticleModel(body);
-
-    await newArticle.save();
-
-    return NextResponse.json(newArticle, {status: 201})
     
+    await newArticle.save();
+    return NextResponse.json(newArticle, {status: 201})
   } catch (error: any) {
      console.error("Error fetching articles:", error);
       return NextResponse.json(
