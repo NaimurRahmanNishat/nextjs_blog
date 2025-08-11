@@ -22,7 +22,7 @@ const mainNavItems: NavItem[] = [
   },
   {
     label: "Categories",
-    href: "/categories",
+    href: "#",
     subItems: [
       {
         label: "Politics",
