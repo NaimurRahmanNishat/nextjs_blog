@@ -1,6 +1,6 @@
-import { Reply } from '@/types/comments'
-import Image from 'next/image'
-import React from 'react'
+import { Reply } from "@/types/comments";
+import Image from "next/image";
+import React from "react";
 
 const ReplyList = ({ replies = [] }: { replies?: Reply[] }) => {
   return (
@@ -18,14 +18,15 @@ const ReplyList = ({ replies = [] }: { replies?: Reply[] }) => {
             <p>{reply.comment}</p>
             <div className="text-xs text-gray-500">
               <strong>{reply.author}</strong>
-              {reply.createdAt && <> • {new Date(reply.createdAt).toLocaleString()}</>}
+              {reply.createdAt && (
+                <> • {new Date(reply.createdAt).toLocaleString()}</>
+              )}
             </div>
           </div>
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-
-export default ReplyList
+export default ReplyList;

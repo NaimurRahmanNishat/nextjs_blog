@@ -48,7 +48,7 @@ const CommentItem = ({
           </button>
         </div>
       </div>
-      
+
       {(comment.replyText?.length ?? 0) > 0 && (
         <ReplyList replies={comment.replyText ?? []} />
       )}

@@ -13,7 +13,10 @@ interface CommentsSectionProps {
   initialComments: Comment[];
 }
 
-const CommentsSection = ({ articleId, initialComments }: CommentsSectionProps) => {
+const CommentsSection = ({
+  articleId,
+  initialComments,
+}: CommentsSectionProps) => {
   const { isSignedIn, user, isLoaded } = useUser();
   const [comments, setComments] = useState<Comment[]>(initialComments);
   const [replyingTo, setReplyingTo] = useState<string | null>(null);
@@ -24,7 +27,10 @@ const CommentsSection = ({ articleId, initialComments }: CommentsSectionProps) =
   const [currentPage, setCurrentPage] = useState(1);
   const commentsPerPage = 5;
   const pageCount = Math.ceil(comments.length / commentsPerPage);
-  const currentComments = comments.slice( (currentPage - 1) * commentsPerPage, currentPage * commentsPerPage );
+  const currentComments = comments.slice(
+    (currentPage - 1) * commentsPerPage,
+    currentPage * commentsPerPage
+  );
 
   // handle reply comment
   const handleReply = async (text: string, parentId: string) => {
